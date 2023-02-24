@@ -12,13 +12,15 @@
     Description: {{ product.description }}
   </p>
   
-  <button type="button" (click)=share()>
+  <button type="button" 
+    (click)=share()>
     Share
   </button>
 
   <!-- Pass the current product to the ProductAlertsComponent child -->
-  <app-product-alerts>
+  <app-product-alerts
     [product]="product"
+    (notify)="onNotify()">
   </app-product-alerts>
 
 </div>
