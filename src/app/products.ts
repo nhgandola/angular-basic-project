@@ -24,6 +24,13 @@ export const products = [
     price: 299,
     description: ''
   }
+  ,
+  {
+    id: 4,
+    name: 'Phone Super MX',
+    price: 999,
+    description: 'A super MX phone!'
+  }
 ];
 
 

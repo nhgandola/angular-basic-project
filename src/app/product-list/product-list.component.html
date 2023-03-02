@@ -1,28 +1,24 @@
 <h2>Products</h2>
 
 <div *ngFor="let product of products">
-
   <h3>
-    <a 
-      [title]="product.name + ' details'" 
-      [routerLink]="['/products', product.id]">
+    <a
+      [title]="product.name + ' details'"
+      [routerLink]="['/products', product.id]"
+    >
       {{ product.name }}
     </a>
   </h3>
 
-  <p *ngIf="product.description">
-    Description: {{ product.description }}
-  </p>
-  
-  <button type="button" 
-    (click)=share()>
-    Share
-  </button>
+  <p *ngIf="product.description">Description: {{ product.description }}</p>
+
+  <button type="button" (click)="share()">Share</button>
 
   <!-- Pass the current product to the ProductAlertsComponent child -->
   <app-product-alerts
     [product]="product"
-    (notify)="onNotify()">
+    (notify)="onNotify()"
+    (buttonTest)="onTest(product.id)"
+  >
   </app-product-alerts>
-
 </div>
